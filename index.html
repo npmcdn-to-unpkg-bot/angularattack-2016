@@ -1,0 +1,62 @@
+
+<html>
+  <head>
+    <title>Angular Attack 2016 Notarobot Entry!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/common.css">
+    <link rel='stylesheet' href='required/semantic-ui/semantic.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="https://rumblex.s3.amazonaws.com/starter/es6-shim/es6-shim.min.js"></script>
+
+    <!-- Angular 2 -->
+    <script src="https://rumblex.s3.amazonaws.com/starter/zone.js/dist/zone.js"></script>
+    <script src="https://rumblex.s3.amazonaws.com/starter/reflect-metadata/Reflect.js"></script>
+    <script src="required/systems/system.src.js"></script>
+
+    <!-- Other -->
+    <script src="required/jquery/jquery.min.js"></script>
+    <script src="required/semantic-ui/semantic.min.js"></script>
+    <script src="required/backstretch/backstretch.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+    <!-- System config -->
+    <script src="systemjs.config.js"></script>
+    <script>
+       System.import('app').catch(function(err){ console.error(err); });
+      _root = {
+
+      }
+    </script>
+
+  </head>
+
+
+
+  <body>
+
+
+    <my-app>
+
+      <div class='loader center'>
+        <br/><br/>
+        <img src="assets/images/loader.gif">
+      </div>
+      <span style='position: absolute; color: white; top: 20; left: 20'>
+        This site works best with Chrome or Firefox and requires the Canvas element.<br /><br />
+        Note to judges to the Angular Attack competition:  the Surge deployment has signifigant loading issues at times.  Please wait or try again later if this persist, but I assure you its worth it!
+      </span>
+    </my-app>
+
+
+  </body>
+
+
+
+
+</html>

@@ -1,0 +1,75 @@
+
+<div id="app-container" class="ui container">
+  <div class="ui row">
+    <div class="ui sixteen column grid no-padding">
+      <div class="cabinet-top no-padding">         <img src="assets/cabinet/cabinet-top.png" class="cabinet-top-image"/>
+        <div style="background-color: black" class="game-panel-0"><a (click)="loadGame(0)"><img src="assets/images/menu.png" style="width: 310px; height: 200px; margin-left: 1px"/></a></div>
+        <div [ngClass]="{'0': 'inactive-game-selection','1': 'active-game-selection', '2': 'inactive-game-selection', '3': 'inactive-game-selection'}[currentlySelected]" class="game-panel-1">               <a (click)="loadGame(1)"><img src="assets/cabinet/angular-attacks.png" class="boxart"/></a></div>
+        <div [ngClass]="{'0': 'inactive-game-selection','1': 'inactive-game-selection', '2': 'active-game-selection', '3': 'inactive-game-selection'}[currentlySelected]" class="game-panel-2"><a (click)="loadGame(2)"><img src="assets/cabinet/debugger-panic.png" class="boxart"/></a></div>
+        <div [ngClass]="{'0': 'inactive-game-selection','1': 'inactive-game-selection', '2': 'inactive-game-selection', '3': 'active-game-selection'}[currentlySelected]" class="game-panel-3"><a (click)="loadGame(3)"><img src="assets/cabinet/kanyes-quest.png" class="boxart"/></a></div>
+        <div style="position: relative; z-index: 5; top: -610px; left: 1060; width: 150px; height: 150px;" class="sticky-note"><a ui-modal="ui-modal" [options]="{selector: '#modal1', blurring: true, transition: 'scale'}" class="is-pointer"><img src="assets/images/credits.png"/></a></div>
+      </div>
+    </div>
+    <div class="ui sixteen column grid">    </div>
+    <div id="cabinet-screen" style="height: 500px" class="ui sixteen column grid">
+      <div id="game-container">
+        <phaser (phaser)="phaserData1($event)" [settings]="{file: 'required/phaser/phaser.min.js'}"></phaser>
+      </div>
+      <div id="cabinet-backdrop"></div>
+      <div id="cabinet-screen-cover"></div>
+      <div id="cabinet-screen-glass"></div>
+      <div id="cabinet-screen-scanlines"></div>
+      <div class="cabinet-screen-top-left no-padding"><img src="assets/cabinet/cabinet-top-left.png"/></div>
+      <div class="cabinet-screen-top-right no-padding"><img src="assets/cabinet/cabinet-top-right.png"/></div>
+      <div class="cabinet-screen-bottom-left no-padding"><img src="assets/cabinet/cabinet-bottom-left.png"/></div>
+      <div class="cabinet-screen-bottom-right no-padding"><img src="assets/cabinet/cabinet-bottom-right.png"/></div>
+      <div class="cabinet-bottom no-padding">           <img src="assets/cabinet/cabinet-bottom.png"/></div>
+      <div class="logo-container"> <a ui-modal="ui-modal" [options]="{selector: '#modal2', blurring: true, transition: 'scale'}" class="is-pointer"><img src="assets/images/logo.png"/></a></div>
+      <div style="position: relative; z-index: 5; top: -575px; left: 190; width: 150px; height: 150px;" class="controls-note"><img src="assets/images/controls.png"/></div>
+    </div>
+  </div>
+</div>
+<div id="modal1" class="ui modal">
+  <div class="header">Credits</div>
+  <div class="content"><span>We here at team <strong>Totally Not a Robot </strong></span><span>take lots of pride in knowing that we somehow put all this together for <strong>Google's Angular Attack 2016 </strong></span><span>48 hour competition.  But that being said, we used quite a few publically available resources.  We'd like to give them credit below.</span><br/><br/>
+    <h5>Art and music resources:</h5>
+    <ul>
+      <li> <a href="http://www.freesound.org" target="_blank">Sound FXs</a></li>
+      <li><a href="http://www.bfxr.net/" target="_blank">8-bit Sounds FX Generator</a></li>
+      <li><a href="http://www.clipartlord.com" target="_blank">Mailman Graphic </a></li>
+      <li><a href="http://www.publicdomainpictures.net" target="_blank">Public Domain Pictures (Toddler Photo/Radio Photo)</a></li>
+      <li><a href="http://www.seaven-studio.com" target="_blank">"Winners don't do drugs" Image</a></li>
+      <li> <a href="http://octoentandre.newgrounds.com/" target="_blank">All the amazing game music (seriously he is amazing)</a></li>
+      <li><a href="http://phatboij.newgrounds.com/" target="_blank">Kanye Quest's music </a></li>
+      <li><a href="http://opengameart.org/gnola14" target="_blank">Icons for Kanye's Quest</a></li>
+    </ul><br/>
+    <h5>Other additional resources:</h5>
+    <ul>
+      <li><a href="http://phaser.io/" target="_blank">Phaser Engine (source code for all the games)</a></li>
+      <li><a href="http://semantic-ui.com/" target="_blank">Semantic UI Framework</a></li>
+      <li><a href="https://angular.io/" target="_blank">Angular 2 (obviously)</a></li>
+    </ul><br/><br/>
+  </div>
+</div>
+<div id="modal2" class="ui modal">
+  <div class="content">
+    <div class="ui link cards">
+      <div style="width: 48%" class="card">
+        <div class="image"><img src="/assets/images/allen-bio.jpg"/></div>
+        <div class="content">
+          <div class="header">Allen Royston</div>
+          <div class="meta"><a>Fullstack Web Developer Wizard</a></div>
+          <div class="description">A software engineer living in Kirkland, WA.  Dreams of being a game developer one day, and if that never happens, well, it's a good thing he loves his current job of developing web apps.</div>
+        </div>
+      </div>
+      <div style="width: 48%" class="card">
+        <div class="image"><img src="/assets/images/miranda-bio.jpg"/></div>
+        <div class="content">
+          <div class="header">Miranda Roberts</div>
+          <div class="meta"><span class="date">Graphic Design and Web Developer</span></div>
+          <div class="description">My name is Miranda Roberts, and I spend a lot of time drawing, coding, and pretty much just creating anything you could think of. I am a 23 years old and freelancer out of Washington state who's currently hoping to turn a hobby into a career. Oh, and I'm totally NOT a Robot (not so sure about Allen, though)!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

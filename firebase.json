@@ -1,0 +1,9 @@
+{
+  "firebase": "angular-attack-tnar",
+  "public": "scores",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

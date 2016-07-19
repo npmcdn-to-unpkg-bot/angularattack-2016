@@ -1,0 +1,116 @@
+//output:main.html
+#app-container.ui.container
+    .ui.row
+      .ui.sixteen.column.grid.no-padding
+        .cabinet-top.no-padding          
+            img.cabinet-top-image(src='assets/cabinet/cabinet-top.png')                        
+            .game-panel-0(style='background-color: black')
+                a( (click)="loadGame(0)" )
+                    img(src='assets/images/menu.png' style='width: 310px; height: 200px; margin-left: 1px')               
+            .game-panel-1( [ngClass]="{'0': 'inactive-game-selection','1': 'active-game-selection', '2': 'inactive-game-selection', '3': 'inactive-game-selection'}[currentlySelected]" )                
+                a( (click)="loadGame(1)" )
+                    img.boxart(src='assets/cabinet/angular-attacks.png')
+            .game-panel-2( [ngClass]="{'0': 'inactive-game-selection','1': 'inactive-game-selection', '2': 'active-game-selection', '3': 'inactive-game-selection'}[currentlySelected]" )
+                a( (click)="loadGame(2)" )
+                    img.boxart(src='assets/cabinet/debugger-panic.png')
+            .game-panel-3( [ngClass]="{'0': 'inactive-game-selection','1': 'inactive-game-selection', '2': 'inactive-game-selection', '3': 'active-game-selection'}[currentlySelected]" )
+                a( (click)="loadGame(3)" )
+                    img.boxart(src='assets/cabinet/kanyes-quest.png')
+            .sticky-note(style='position: relative; z-index: 5; top: -610px; left: 1060; width: 150px; height: 150px;')
+              a(ui-modal [options]="{selector: '#modal1', blurring: true, transition: 'scale'}").is-pointer
+                img(src='assets/images/credits.png')           
+      .ui.sixteen.column.grid     
+      #cabinet-screen.ui.sixteen.column.grid(style='height: 500px')
+          #game-container
+            phaser( (phaser)="phaserData1($event)", [settings]="{file: 'required/phaser/phaser.min.js'}")
+          #cabinet-backdrop
+          #cabinet-screen-cover
+          #cabinet-screen-glass
+          #cabinet-screen-scanlines
+          .cabinet-screen-top-left.no-padding
+            img(src='assets/cabinet/cabinet-top-left.png')
+          .cabinet-screen-top-right.no-padding
+            img(src='assets/cabinet/cabinet-top-right.png')
+          .cabinet-screen-bottom-left.no-padding
+            img(src='assets/cabinet/cabinet-bottom-left.png')
+          .cabinet-screen-bottom-right.no-padding
+            img(src='assets/cabinet/cabinet-bottom-right.png')
+          .cabinet-bottom.no-padding            
+            img(src='assets/cabinet/cabinet-bottom.png')
+          .logo-container  
+            a(ui-modal [options]="{selector: '#modal2', blurring: true, transition: 'scale'}").is-pointer
+              img(src='assets/images/logo.png')
+          .controls-note(style='position: relative; z-index: 5; top: -575px; left: 190; width: 150px; height: 150px;')
+            img(src='assets/images/controls.png')
+
+
+#modal1.ui.modal
+  .header Credits
+  .content
+    span We here at team 
+      strong Totally Not a Robot 
+    span take lots of pride in knowing that we somehow put all this together for 
+      strong Google's Angular Attack 2016 
+    span 48 hour competition.  But that being said, we used quite a few publically available resources.  We'd like to give them credit below.
+    br
+    br
+    h5 Art and music resources:
+    ul
+      li 
+        a(href='http://www.freesound.org' target="_blank") Sound FXs
+      li
+        a(href='http://www.bfxr.net/' target="_blank") 8-bit Sounds FX Generator
+      li
+        a(href='http://www.clipartlord.com' target="_blank") Mailman Graphic 
+      li
+        a(href='http://www.publicdomainpictures.net' target="_blank") Public Domain Pictures (Toddler Photo/Radio Photo)
+      li
+        a(href='http://www.seaven-studio.com' target="_blank") "Winners don't do drugs" Image
+      li 
+        a(href='http://octoentandre.newgrounds.com/' target="_blank") All the amazing game music (seriously he is amazing)
+      li
+        a(href='http://phatboij.newgrounds.com/' target="_blank") Kanye Quest's music 
+      li
+        a(href='http://opengameart.org/gnola14' target="_blank") Icons for Kanye's Quest
+        
+    br
+    h5 Other additional resources:
+    ul
+      li
+        a(href='http://phaser.io/' target="_blank") Phaser Engine (source code for all the games)
+      li
+        a(href='http://semantic-ui.com/' target="_blank") Semantic UI Framework
+      li
+        a(href='https://angular.io/' target="_blank") Angular 2 (obviously)
+    br
+    br
+    
+
+#modal2.ui.modal
+  .content
+    .ui.link.cards
+      .card(style='width: 48%')
+        .image
+          img(src='/assets/images/allen-bio.jpg')
+        .content
+          .header Allen Royston
+          .meta
+            a Fullstack Web Developer Wizard
+          .description
+            | A software engineer living in Kirkland, WA.  Dreams of being a game developer one day, and if that never happens, well, it's a good thing he loves his current job of developing web apps.
+
+      .card(style='width: 48%')
+        .image
+          img(src='/assets/images/miranda-bio.jpg')
+        .content
+          .header Miranda Roberts
+          .meta
+            span.date Graphic Design and Web Developer
+          .description
+            | My name is Miranda Roberts, and I spend a lot of time drawing, coding, and pretty much just creating anything you could think of. I am a 23 years old and freelancer out of Washington state who's currently hoping to turn a hobby into a career. Oh, and I'm totally NOT a Robot (not so sure about Allen, though)!
+
+
+
+      
+                  
+          
